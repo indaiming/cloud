@@ -1,0 +1,11 @@
+
+
+spring:
+  application:
+    name: provider5552
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:5555/eureka
+server:
+  port: 5552

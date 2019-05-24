@@ -1,0 +1,17 @@
+server:
+  port: 5000
+spring:
+  application:
+    name: api-geteway
+zuul:
+  routes:
+    PROVIDER5552-SERVICE:
+      path: /PROVIDER5552/**
+      serviceId: PROVIDER5552
+    PROVIDER5551-SERVICE:
+      path: /PROVIDER5551/**
+      serviceId: PROVIDER5551
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:5555/eureka/
