@@ -29,7 +29,7 @@ public class Demo5552 {
         return "Demo5552====>port:"+port+",======>info:"+info;
     }
 
-    @ApiOperation(value = "输出信息")
+    @ApiOperation(value = "输出信息接口")
     @GetMapping("/outInfo")
     public String outInfo(@RequestParam(value = "info") String info){
         return "Demo5552=====输出信息=====>info:"+info;
