@@ -42,17 +42,18 @@ public class MyFilterPre extends ZuulFilter {
     public Object run() throws ZuulException {
 
         //第4步 业务处理 权限校验(必须携带token值)
-        RequestContext  context = RequestContext.getCurrentContext();
+        //http://localhost:5000/zuul/PROVIDER5551/getPort/111?token=FSDFLKJL
+        RequestContext context = RequestContext.getCurrentContext();
         HttpServletRequest request = context.getRequest();
         String token = request.getParameter("token");
-        if (token == null){
+        if (token == null) {
             context.setSendZuulResponse(false);
             context.setResponseStatusCode(401);
             context.setResponseBody("unAuthrized");
         }
         return null;
     }
-  // 控制台输出
+    // 控制台输出
 //            ==============执行了pre===============
 //            ==============执行了routing===============
 //            ==============执行了error===============

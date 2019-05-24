@@ -1,6 +1,6 @@
 spring:
   application:
-    name: provider5552
+    name: provider
 eureka:
   client:
     service-url:

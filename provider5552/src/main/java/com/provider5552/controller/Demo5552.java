@@ -1,12 +1,12 @@
 package com.provider5552.controller;
 
+import com.provider5552.entity.User;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Date;
 
 
 @RestController()
@@ -18,8 +18,8 @@ public class Demo5552 {
 
     @GetMapping("/hi/{name}")
     public String doHello(@PathVariable String name){
-        System.out.println("Demo5551~~hello"+name);
-        return "Demo5551~~hello"+name;
+        System.out.println(port+"~~hello"+name);
+        return port+"~~hello"+name;
     }
 
     @ApiOperation(value = "获取端口接口测试")
@@ -34,5 +34,25 @@ public class Demo5552 {
     public String outInfo(@RequestParam(value = "info") String info){
 //        int i = 2/0;//模拟异常
         return "Demo5552=====输出信息=====>info:"+info;
+    }
+
+    @GetMapping("/getUserNames")
+    @ApiOperation(value = "输出用户名接口测试")
+    public String getUserNames(){
+
+        return "1.天魁星…呼保义…宋江.\n" +
+                "2.天罡星…玉麒麟…卢俊义.\n" +
+                "3.天机星…智多星…吴用.\n" +
+                "4.天闲星…入云龙…公孙胜" ;
+    }
+
+    @PostMapping("/getUser")
+    @ApiOperation(value = "用户接口测试")
+    public User getUser(){
+        User user = new User();
+        user.setName("5551");
+        user.setPort(port);
+        user.setNowTime(new Date());
+        return user;
     }
 }
