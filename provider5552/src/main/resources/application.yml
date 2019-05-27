@@ -1,9 +1,22 @@
 spring:
   application:
-    name: provider
+    name: provider2
+  datasource:
+    name:
+    username: root
+    password: 123456
+    type: com.mysql.jdbc.jdbc2.optional.MysqlDataSource
+    url: jdbc:mysql://127.0.0.1:3306/test
+  jpa:
+    show-sql: true
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:5555/eureka
 server:
   port: 5552
+
+eurekaServer:
+  service-5552: PROVIDER1
+  service-local: PROVIDER2
+

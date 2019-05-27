@@ -26,14 +26,14 @@ public class Demo5552 {
     @GetMapping("/getPort/{info}")
     public String getPort(@PathVariable("info") String info){
         System.out.println("Demo5552====>port:"+port+",======>info:"+info);
-        return "Demo5552====>port:"+port+",======>info:"+info;
+        return port+"======>info:"+info;
     }
 
     @ApiOperation(value = "输出信息接口")
     @GetMapping("/outInfo")
     public String outInfo(@RequestParam(value = "info") String info){
 //        int i = 2/0;//模拟异常
-        return "Demo5552=====输出信息=====>info:"+info;
+        return port+"==输出信息=====>info:"+info;
     }
 
     @GetMapping("/getUserNames")
@@ -46,11 +46,21 @@ public class Demo5552 {
                 "4.天闲星…入云龙…公孙胜" ;
     }
 
+//    @PostMapping("/getUser")
+//    @ApiOperation(value = "用户接口测试")
+//    public User getUser(){
+//        User user = new User();
+//        user.setName("5551");
+//        user.setPort(port);
+//        user.setNowTime(new Date());
+//        return user;
+//    }
+
     @PostMapping("/getUser")
     @ApiOperation(value = "用户接口测试")
-    public User getUser(){
-        User user = new User();
-        user.setName("5551");
+    public User getUser(@RequestBody User user){
+        User user1 = new User();
+        user.setName(port+user.getName());
         user.setPort(port);
         user.setNowTime(new Date());
         return user;

@@ -7,10 +7,10 @@ zuul:
   routes:
     PROVIDER-SERVICE:
       path: /pro/**
-      serviceId: PROVIDER
+      serviceId: PROVIDER2
   prefix: /api   #http://localhost:5000/zuul/api/pro5551/getPort/wr?token=326666
 #  ignored-services: PROVIDER5551-SERVICE
-  ignored-patterns: /**/getPort/** # 路径中包含getPort被拒绝访问
+  ignored-patterns: /**/hi/** # 路径中包含getPort被拒绝访问
 eureka:
   client:
     service-url:
