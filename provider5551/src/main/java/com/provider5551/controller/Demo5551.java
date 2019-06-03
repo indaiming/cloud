@@ -79,13 +79,4 @@ public class Demo5551 {
 //        return fegin5551.getUserByFegin(user);
 //    }
 
-    @PostMapping("/getUser")
-    @ApiOperation(value = "用户接口测试")
-    public User getUser(User user1){
-        User user = new User();
-        user.setName(port+user1.getName());
-        user.setPort(port);
-        user.setNowTime(new Date());
-        return user;
-    }
 }

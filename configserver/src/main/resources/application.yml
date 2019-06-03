@@ -1,0 +1,15 @@
+
+my:
+  name: config6000
+
+server:
+  port: 6000
+spring:
+    cloud:
+      config:
+        server:
+          default-application-name: config-server
+          git:
+#            search-paths: configserver
+            uri: https://github.com/indaiming/configserver
+        label: master

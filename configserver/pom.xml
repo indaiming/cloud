@@ -5,54 +5,24 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.5.21.RELEASE</version>
+		<version>2.1.5.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com</groupId>
-	<artifactId>provider5552</artifactId>
+	<artifactId>configserver</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>provider5552</name>
+	<name>configserver</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
 		<java.version>1.8</java.version>
-		<spring-cloud.version>Edgware.SR5</spring-cloud.version>
+		<spring-cloud.version>Greenwich.SR1</spring-cloud.version>
 	</properties>
 
 	<dependencies>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-thymeleaf</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>io.springfox</groupId>
-			<artifactId>springfox-swagger2</artifactId>
-			<version>2.2.2</version>
-		</dependency>
-		<dependency>
-			<groupId>io.springfox</groupId>
-			<artifactId>springfox-swagger-ui</artifactId>
-			<version>2.2.2</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-amqp</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-databind</artifactId>
-		</dependency>
-		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+			<artifactId>spring-cloud-config-server</artifactId>
 		</dependency>
 
 		<dependency>
@@ -61,14 +31,20 @@
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
+		</dependency>
+		<!--表示为web工程-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<!--暴露各种指标  貌似是必须的  -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
