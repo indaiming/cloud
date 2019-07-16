@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head lang="en">
+    <meta name="referrer" content="never" charset="UTF-8"/>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"/>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"/>
+    <title>欢迎！</title>
+    <style>
+    body {
+        background: #F0F2F0; /* fallback for old browsers */
+        background: -webkit-linear-gradient(to left, #ffc107, #6610f2); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to left, #0069d9, #fd7e14); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
+</style>
+</head>
+<body>
+<div class="jumbotron text-center" style="margin-bottom:0">
+    <h1 th:text="${title}">这是欢迎页面！</h1>
+    <h2 th:text="${info}">这是未知的世界！</h2>
+    <p><a class="btn btn-primary btn-lg" href="/" role="button">首页</a></p>
+    <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+    <form th:action="@{/logout}" method="post">
+        <input type="submit" value="注销"/>
+    </form>
+</div>
+
+</body>
+
+</html>

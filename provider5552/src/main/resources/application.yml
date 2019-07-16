@@ -2,13 +2,34 @@ spring:
   application:
     name: provider2
   datasource:
-    name:
-    username: root
-    password: 123456
-    type: com.mysql.jdbc.jdbc2.optional.MysqlDataSource
-    url: jdbc:mysql://127.0.0.1:3306/test
+    primary:
+      name:
+      username: root
+      password: 123456
+      type: com.mysql.jdbc.jdbc2.optional.MysqlDataSource
+      url: jdbc:mysql://127.0.0.1:3306/test
+    secondary:
+      name:
+      username: root
+      password: 123456
+      type: com.mysql.jdbc.jdbc2.optional.MysqlDataSource
+      url: jdbc:mysql://127.0.0.1:3307/category
   jpa:
     show-sql: true
+  redis:
+    port: 6379
+    timeout: 8
+    pool:
+      max-active: 8
+      max-wait: -1
+    database: 0
+    host: 127.0.0.1
+  ldap:
+    embedded:
+      ldif: ldap-server.ldif
+      base-dn: dc=didispace,dc=com
+
+
 eureka:
   client:
     service-url:
@@ -19,4 +40,5 @@ server:
 eurekaServer:
   service-5552: PROVIDER1
   service-local: PROVIDER2
+
 

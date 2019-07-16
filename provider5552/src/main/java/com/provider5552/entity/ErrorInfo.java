@@ -1,8 +1,12 @@
 package com.provider5552.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class ErrorInfo<T> {
 
     public static final Integer OK = 0;

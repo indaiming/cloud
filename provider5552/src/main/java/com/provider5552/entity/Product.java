@@ -17,7 +17,9 @@ package com.provider5552.entity;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -28,6 +30,8 @@ import javax.persistence.Table;
 @Table(name = "product")
 @Entity
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 @ApiModel(value = "商品表数据模型")
 public class Product {
 

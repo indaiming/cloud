@@ -1,0 +1,30 @@
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>Spring Security Example </title>
+</head>
+<style>
+    body {
+        background: #F0F2F0; /* fallback for old browsers */
+        background: -webkit-linear-gradient(to left, #ffc107, #6610f2); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to left, #0069d9, #fd7e14); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
+</style>
+<body>
+<div th:if="${param.error}">
+    用户名或密码错
+</div>
+<div th:if="${param.logout}">
+    您已注销成功
+</div>
+<form th:action="@{/login}" method="post">
+    <div><label> 用户名 : <input type="text" name="username"/> </label></div>
+    <div><label> 密  码 : <input type="password" name="password"/> </label></div>
+    <div><input type="submit" value="登录"/></div>
+</form>
+</body>
+</html>

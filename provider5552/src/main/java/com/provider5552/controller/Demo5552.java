@@ -1,10 +1,11 @@
 package com.provider5552.controller;
 
-import com.provider5552.entity.User;
+import com.provider5552.entity.User1;
 import com.provider5552.exception.MyException;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
@@ -68,12 +69,15 @@ public class Demo5552 {
 //        return user;
 //    }
 
-    @PostMapping("/getUser")
-    @ApiOperation(value = "用户接口测试")
-    public User getUser(@RequestBody User user) {
-        User user1 = new User();
+
+//    <!--  XML 消息转换器（Message Converter）-->
+    @PostMapping(value = "/getUser",consumes = MediaType.APPLICATION_XML_VALUE,
+            produces = MediaType.APPLICATION_XML_VALUE)
+    @ApiOperation(value = "用户接口测试 xml发送接收对象")
+    public User1 getUser(@RequestBody User1 user) {
+        User1 user1 = new User1();
         user.setName(port + user.getName());
-        user.setPort(port);
+        user.setAge(22);
         user.setNowTime(new Date());
         return user;
     }
